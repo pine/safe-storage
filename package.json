@@ -16,6 +16,7 @@
   },
   "type": "module",
   "exports": {
+    "types": "./types.d.ts",
     "browser": "./browser.mjs",
     "default": "./node.mjs"
   },
@@ -24,8 +25,10 @@
   "files": [
     "lib/**/*.mjs",
     "browser.mjs",
-    "node.mjs"
+    "node.mjs",
+    "types.d.ts"
   ],
+  "types": "./types.d.ts",
   "dependencies": {
     "keytar": "^7.9.0",
     "uint8array-extras": "^1.4.0"
