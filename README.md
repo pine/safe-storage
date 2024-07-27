@@ -1,5 +1,5 @@
 # safe-storage
-> Electron-like encryption/decryption API for Node and browsers
+> Electron-like encryption/decryption API for Node.js and browsers
 
 ## Features
 
