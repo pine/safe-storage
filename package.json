@@ -1,0 +1,16 @@
+{
+  "name": "@pinemz/safe-storage",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "browser": "./browser.mjs",
+    "default": "./node.mjs"
+  },
+  "main": "./node.mjs",
+  "browser": "./browser.mjs",
+  "dependencies": {
+    "keytar": "^7.9.0",
+    "uint8array-extras": "^1.4.0"
+  }
+}
