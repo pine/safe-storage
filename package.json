@@ -25,6 +25,9 @@
     "keytar": "^7.9.0",
     "uint8array-extras": "^1.4.0"
   },
+  "engines": {
+    "node": ">= 19.0.0"
+  },
   "publishConfig": {
     "access": "public"
   }
