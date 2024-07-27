@@ -1,6 +1,6 @@
 export declare class Keychain {
   constructor(service: string, account: string)
-  async getPassword(): string
+  async getOrCreatePassword(): string
 }
 
 export declare class SafeStorage {
