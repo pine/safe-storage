@@ -1,7 +1,19 @@
 {
   "name": "@pinemz/safe-storage",
   "version": "0.1.0",
+  "description": "Electron-like encryption/decryption API for Node and browsers",
   "license": "MIT",
+  "author": {
+    "name": "Pine Mizune",
+    "email": "pinemz@gmail.com",
+    "url": "https://github.com/pine"
+  },
+  "homepage": "https://github.com/pine/safe-storage",
+  "repository": "github:pine/safe-storage",
+  "bugs": {
+    "url": "https://github.com/pine/safe-storage/issues",
+    "email": "pinemz@gmail.com"
+  },
   "type": "module",
   "exports": {
     "browser": "./browser.mjs",
@@ -12,5 +24,8 @@
   "dependencies": {
     "keytar": "^7.9.0",
     "uint8array-extras": "^1.4.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
