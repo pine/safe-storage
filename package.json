@@ -21,6 +21,11 @@
   },
   "main": "./node.mjs",
   "browser": "./browser.mjs",
+  "files": [
+    "lib/**/*.mjs",
+    "browser.mjs",
+    "node.mjs"
+  ],
   "dependencies": {
     "keytar": "^7.9.0",
     "uint8array-extras": "^1.4.0"
