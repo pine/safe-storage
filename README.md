@@ -8,6 +8,8 @@
 - Provides TypeScript type definitions as default
 
 ## Getting started
+### Install
+
 First, install this package as follows:
 ```bash
 # For npm users
@@ -20,7 +22,8 @@ $ yarn add @pinemz/safe-storage
 $ pnpm add @pinemz/safe-storage
 ```
 
-Then, use the CLI to encrypt any text:
+### Usage
+After installation, use the CLI to encrypt any text:
 
 ```bash
 # Encrypts using a password stored in the OS keychain.
