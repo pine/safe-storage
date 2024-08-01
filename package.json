@@ -17,15 +17,15 @@
   "type": "module",
   "exports": {
     "types": "./types.d.ts",
-    "browser": "./browser.mjs",
-    "default": "./node.mjs"
+    "browser": "./browser.js",
+    "default": "./node.js"
   },
-  "main": "./node.mjs",
-  "browser": "./browser.mjs",
+  "main": "./node.js",
+  "browser": "./browser.js",
   "files": [
-    "lib/**/*.mjs",
-    "browser.mjs",
-    "node.mjs",
+    "lib/**/*.js",
+    "browser.js",
+    "node.js",
     "types.d.ts"
   ],
   "types": "./types.d.ts",
