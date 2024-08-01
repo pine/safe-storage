@@ -1,5 +1,6 @@
 export declare class Keychain {
   constructor(service: string, account: string)
+  getPassword(): Promise<string | null>
   getOrCreatePassword(): Promise<string>
 }
 
