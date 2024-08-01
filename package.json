@@ -1,6 +1,6 @@
 {
   "name": "@pinemz/safe-storage",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Electron-like encryption/decryption API for Node and browsers",
   "license": "MIT",
   "author": {
