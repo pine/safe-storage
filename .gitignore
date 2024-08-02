@@ -1,4 +1,4 @@
 node_modules/
-out/
+docs/
 yarn-error.log
 yarn.lock
