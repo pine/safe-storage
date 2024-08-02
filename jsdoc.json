@@ -1,14 +1,17 @@
 {
   "opts": {
     "destination": "./docs",
+    "nocolor": true,
     "readme": "README.md",
-    "template": "node_modules/better-docs"
+    "recurse": true,
+    "template": "node_modules/better-docs",
+    "verbose": true
   },
   "plugins": [
     "node_modules/better-docs/category"
   ],
   "source": {
-    "include": ["./lib"],
+    "include": ["lib"],
     "includePattern": ".js$",
     "excludePattern": "(node_modules/|docs)"
   },
@@ -19,7 +22,7 @@
     "better-docs": {
       "navLinks": [
         {
-          "label": "Github",
+          "label": "GitHub",
           "href": "https://github.com/pine/safe-storage"
         }
       ]

@@ -28,6 +28,9 @@
     "node.js",
     "types.d.ts"
   ],
+  "scripts": {
+    "jsdoc": "jsdoc -c jsdoc.json"
+  },
   "types": "./types.d.ts",
   "dependencies": {
     "keytar": "^7.9.0",
