@@ -42,11 +42,12 @@ const decryptedText = safeStorage.decryptString('<encrypted text>')
 console.log(decryptedText)
 ```
 
-## CLI Specifications
+## References
+### CLI
 TODO
 
-## API Specifications
-TODO
+## API
+https://pine.github.io/safe-storage/
 
 ## FAQ
 ### Q. Is this library only available for macOS?
