@@ -8,7 +8,6 @@
     "verbose": true
   },
   "plugins": [
-    "node_modules/better-docs/category"
   ],
   "source": {
     "include": ["lib"],
@@ -16,7 +15,6 @@
     "excludePattern": "(node_modules/|docs)"
   },
   "tags": {
-    "allowUnknownTags": ["category"]
   },
   "templates": {
     "better-docs": {
