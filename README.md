@@ -47,7 +47,7 @@ console.log(decryptedText)
 TODO
 
 ## API
-https://pine.github.io/safe-storage/
+- [API Reference](https://pine.github.io/safe-storage/)
 
 ## FAQ
 ### Q. Is this library only available for macOS?
