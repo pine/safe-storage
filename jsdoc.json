@@ -22,6 +22,10 @@
         {
           "label": "GitHub",
           "href": "https://github.com/pine/safe-storage"
+        },
+        {
+          "label": "NPM",
+          "href": "https://www.npmjs.com/"
         }
       ]
     }
