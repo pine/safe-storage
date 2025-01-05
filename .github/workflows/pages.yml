@@ -1,12 +1,8 @@
 name: Publish GitHub pages
-on:
-  push:
-    branches:
-      - main
-    workflow_dispatch:
+on: push
 
 concurrency:
-  group: pages
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -30,6 +26,7 @@ jobs:
           path: ./docs
   deploy:
     needs: build
+    if: ${{ github.ref == 'refs/heads/main' }}
     permissions:
       pages: write
       id-token: write
@@ -41,4 +38,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
