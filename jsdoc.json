@@ -4,7 +4,7 @@
     "nocolor": true,
     "readme": "README.md",
     "recurse": true,
-    "template": "node_modules/better-docs",
+    "template": "node_modules/docdash",
     "verbose": true
   },
   "plugins": [
@@ -16,18 +16,14 @@
   },
   "tags": {
   },
-  "templates": {
-    "better-docs": {
-      "navLinks": [
-        {
-          "label": "GitHub",
-          "href": "https://github.com/pine/safe-storage"
-        },
-        {
-          "label": "NPM",
-          "href": "https://www.npmjs.com/"
-        }
-      ]
+  "docdash": {
+    "menu": {
+      "GitHub": {
+        "href": "https://github.com/pine/safe-storage"
+      },
+      "NPM": {
+        "href": "https://www.npmjs.com/"
+      }
     }
   }
 }

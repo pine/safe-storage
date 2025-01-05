@@ -43,7 +43,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "better-docs": "^2.7.3",
+    "docdash": "^2.0.2",
     "jsdoc": "^4.0.3"
   }
 }
