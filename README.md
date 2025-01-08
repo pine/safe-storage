@@ -1,4 +1,8 @@
 # safe-storage
+
+[![Test](https://github.com/pine/safe-storage/actions/workflows/test.yml/badge.svg)](https://github.com/pine/safe-storage/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/pine/safe-storage/graph/badge.svg?token=mrSLYH77nf)](https://codecov.io/gh/pine/safe-storage)
+
 > Electron-like encryption/decryption API for Node.js and browsers
 
 ## Features
