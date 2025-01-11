@@ -30,7 +30,7 @@
   ],
   "scripts": {
     "jsdoc": "jsdoc -c jsdoc.json",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "node --no-warnings --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "types": "./types.d.ts",
   "dependencies": {
