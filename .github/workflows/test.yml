@@ -18,7 +18,7 @@ jobs:
       - name: Install libsecret
         run: |
           sudo apt-get update
-          sudo apt-get install libsecret-1-0 gnome-keyring
+          sudo apt-get install libsecret-1-dev gnome-keyring
       - name: Install dependencies
         run: yarn
       - name: Run test
