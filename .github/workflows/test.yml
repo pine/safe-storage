@@ -18,7 +18,9 @@ jobs:
       - name: Install libsecret
         run: |
           sudo apt-get update
-          sudo apt-get install libsecret-1-dev gnome-keyring
+          sudo apt-get install libsecret-1-dev gnome-keyring dbus-x11
+          dbus-launch --sh-syntax
+          echo '' | /usr/bin/gnome-keyring-daemon --unlock
       - name: Install dependencies
         run: yarn
       - name: Run test
