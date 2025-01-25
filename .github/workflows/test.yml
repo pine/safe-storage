@@ -15,16 +15,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Install libsecret
+      - name: Install apt packages
         run: |
           sudo apt-get update
           sudo apt-get install libsecret-1-dev gnome-keyring dbus-x11
-          dbus-launch --sh-syntax
-          echo '' | /usr/bin/gnome-keyring-daemon --unlock
       - name: Install dependencies
         run: yarn
       - name: Run test
-        run: yarn test
+        run: |
+          eval $(dbus-launch --sh-syntax)
+          eval $(echo '' | /usr/bin/gnome-keyring-daemon --unlock)
+          yarn test
       - name: Send coverage to codecov
         uses: codecov/codecov-action@v5
         with:
