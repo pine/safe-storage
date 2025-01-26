@@ -20,6 +20,7 @@
     "browser": "./browser.js",
     "default": "./node.js"
   },
+  "bin": "./bin/safe-storage",
   "main": "./node.js",
   "browser": "./browser.js",
   "files": [
