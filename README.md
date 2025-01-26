@@ -32,7 +32,7 @@ After installation, use the CLI to encrypt any text:
 ```bash
 # Encrypts using a password stored in the OS keychain.
 # (If none exists, it will be generated automatically and stored in the OS keychain)
-$ safe-storage encrypt -s <service> -a <account> -t <text to encrypt>
+$ safe-storage encrypt -s <service> -a <account> <text to encrypt>
 ```
 
 Finally, decrypt the encrypted text in your script:
@@ -49,7 +49,7 @@ console.log(decryptedText)
 ## References
 ### CLI
 
-```
+```bash
 $ /safe-storage --help
 Usage: safe-storage <command> <options> <inputs>
 
