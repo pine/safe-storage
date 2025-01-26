@@ -50,7 +50,7 @@ console.log(decryptedText)
 ### CLI
 
 ```bash
-$ /safe-storage --help
+$ safe-storage --help
 Usage: safe-storage <command> <options> <inputs>
 
 Encryption command:
