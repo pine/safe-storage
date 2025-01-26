@@ -23,10 +23,11 @@
   "main": "./node.js",
   "browser": "./browser.js",
   "files": [
+    "*.js",
+    "*.ts",
+    "bin/*",
     "lib/**/*.js",
-    "browser.js",
-    "node.js",
-    "types.d.ts"
+    "!**/*.test.js"
   ],
   "scripts": {
     "jsdoc": "jsdoc -c jsdoc.json",
