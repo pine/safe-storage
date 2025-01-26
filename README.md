@@ -48,7 +48,34 @@ console.log(decryptedText)
 
 ## References
 ### CLI
-TODO
+
+```
+$ /safe-storage --help
+Usage: safe-storage <command> <options> <inputs>
+
+Encryption command:
+  Encryption requires -s and -a or -p.
+  If you use -s and -a, save your password in your keychain beforehand,
+  otherwise a new password will be generated and saved.
+
+  $ safe-storage encrypt -s <service> -a <account> <plainText>
+  $ safe-storage encrypt -p <password> <plainText>
+
+Decryption command:
+  Decryption requires -s and -a or -p.
+  If you use -s and -a, save your password in your keychain beforehand,
+  otherwise a new password will be generated and saved.
+
+  $ safe-storage decrypt -s <service> -a <account> <encryptedText>
+  $ safe-storage decrypt -p <password> <encryptedText>
+
+Options:
+  -s/--service  : Specify keychain service
+  -a/--account  : Specify keychain account
+  -p/--password : Specify password directly in plain text
+  -v/--version  : Show package version
+  -h/--help     : Show help
+```
 
 ## API
 - [API Reference](https://pine.github.io/safe-storage/)
