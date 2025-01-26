@@ -1,33 +1,10 @@
 #!/usr/bin/env node
 
 import { parseArgs } from 'node:util'
-import { readFile } from 'fs/promises'
+import { readFile } from 'node:fs/promises'
 
 import { KeychainNode as Keychain } from '../lib/keychain_node.js'
 import { SafeStorage } from '../lib/safe_storage.js'
-
-const options = {
-  service: {
-    type: 'string',
-    short: 's',
-  },
-  account: {
-    type: 'string',
-    short: 'a',
-  },
-  password: {
-    type: 'string',
-    short: 'p',
-  },
-  help: {
-    type: 'boolean',
-    short: 'h',
-  },
-  version: {
-    type: 'boolean',
-    short: 'v',
-  },
-}
 
 async function version() {
   const pkgUrl = new URL('../package.json', import.meta.url)
@@ -87,6 +64,28 @@ async function encryptOrDecrypt(values, positionals) {
 }
 
 ;(async () => {
+  const options = {
+    service: {
+      type: 'string',
+      short: 's',
+    },
+    account: {
+      type: 'string',
+      short: 'a',
+    },
+    password: {
+      type: 'string',
+      short: 'p',
+    },
+    help: {
+      type: 'boolean',
+      short: 'h',
+    },
+    version: {
+      type: 'boolean',
+      short: 'v',
+    },
+  }
   const { values, positionals } = parseArgs({ allowPositionals: true, options })
 
   if (values.version) {
