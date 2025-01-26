@@ -1,0 +1,111 @@
+#!/usr/bin/env node
+
+import { parseArgs } from 'node:util'
+import { readFile } from 'fs/promises'
+
+import { KeychainNode as Keychain } from '../lib/keychain_node.js'
+import { SafeStorage } from '../lib/safe_storage.js'
+
+const options = {
+  service: {
+    type: 'string',
+    short: 's',
+  },
+  account: {
+    type: 'string',
+    short: 'a',
+  },
+  password: {
+    type: 'string',
+    short: 'p',
+  },
+  help: {
+    type: 'boolean',
+    short: 'h',
+  },
+  version: {
+    type: 'boolean',
+    short: 'v',
+  },
+}
+
+async function version() {
+  const pkgUrl = new URL('../package.json', import.meta.url)
+  const pkg = JSON.parse(await readFile(pkgUrl, { encoding: 'utf-8' }))
+  console.log(pkg.version)
+}
+
+async function help() {
+  console.log(`Usage: safe-storage <command> <options> <inputs>
+
+Encryption command:
+  Encryption requires -s and -a or -p.
+  If you use -s and -a, save your password in your keychain beforehand,
+  otherwise a new password will be generated and saved.
+
+  $ safe-storage encrypt -s <service> -a <account> <plainText>
+  $ safe-storage encrypt -p <password> <plainText>
+
+Decryption command:
+  Decryption requires -s and -a or -p.
+  If you use -s and -a, save your password in your keychain beforehand,
+  otherwise a new password will be generated and saved.
+
+  $ safe-storage decrypt -s <service> -a <account> <encryptedText>
+  $ safe-storage decrypt -p <password> <encryptedText>
+
+Options:
+  -s/--service  : Specify keychain service
+  -a/--account  : Specify keychain account
+  -p/--password : Specify password directly in plain text
+  -v/--version  : Show package version
+  -h/--help     : Show help`)
+
+}
+
+async function encryptOrDecrypt(values, positionals) {
+  const cmd = positionals[0]
+  const inputs = positionals.slice(1)
+
+  let password
+  if (values.password) {
+    password = values.password
+  } else if (values.service && values.account) {
+    const keychain = new Keychain(values.service, values.account)
+    password = await keychain.getOrCreatePassword()
+  } else {
+    console.error('ERROR: No password specified, see help.')
+    return
+  }
+
+  const safeStorage = new SafeStorage(password)
+  for (const i of inputs) {
+    console.log(cmd === 'encrypt' ?
+                await safeStorage.encryptString(i) :
+                await safeStorage.decryptString(i))
+  }
+}
+
+;(async () => {
+  const { values, positionals } = parseArgs({ allowPositionals: true, options })
+
+  if (values.version) {
+    await version()
+    return
+  }
+
+  if (values.help) {
+    await help()
+    return
+  }
+
+  if (positionals.length >= 2) {
+    const cmd = positionals[0]
+    if (cmd === 'encrypt' || cmd === 'decrypt') {
+      await encryptOrDecrypt(values, positionals)
+      return
+    }
+  }
+
+  await help()
+})()
