@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "docdash": "^2.0.2",
-    "jest": "^29.7.0",
+    "jest": "^30.0.3",
     "jsdoc": "^4.0.3"
   },
   "engines": {
